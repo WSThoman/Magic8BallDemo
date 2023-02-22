@@ -1,0 +1,10 @@
+.vs/
+*.csproj.user
+Backup/
+bin/
+obj/
+publish/
+*.msi
+*.wixobj
+*.wixpdb
+setup.exe
