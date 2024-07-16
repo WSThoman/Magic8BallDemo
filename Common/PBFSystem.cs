@@ -845,6 +845,7 @@ namespace PBFCommon
 
 #pragma warning restore CA1416 // Validate platform compatibility
 
+        ///-------------------------------------------------------------------
         /// <summary>
         /// Returns a string detailing the line of source code that called it.
         /// </summary>
@@ -856,6 +857,7 @@ namespace PBFCommon
         /// <remarks>
         /// Pass the keyword 'this' for the first parameter 'callingObjThis'.
         /// </remarks>
+        ///-------------------------------------------------------------------
         public static string SourceCodePosStr( object callingObjThis,
                                                bool includeCallingFilePath = false,
                                                [CallerMemberName] string callingMethod = "",
