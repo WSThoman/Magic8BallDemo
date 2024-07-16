@@ -85,7 +85,7 @@ namespace Magic8BallDemo
             Sep1         = 1,
             Icon         = 2,
             Application  = 3,
-            DonateToPBF  = 4,
+            PBFWebsite   = 4,
             About        = 5,
             Sep2         = 6,
             Exit         = 7
