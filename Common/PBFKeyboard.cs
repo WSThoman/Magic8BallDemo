@@ -13,8 +13,8 @@ namespace PBFCommon
     {
         private sealed class NativeMethods
         {
-            // extern's
-            //
+            #region extern's
+
             [DllImport("user32.dll")]
 #pragma warning disable IDE1006 // Naming Styles
             public static extern void keybd_event( byte bVk, byte bScan, uint dwFlags, IntPtr dwExtraInfo );
@@ -22,6 +22,8 @@ namespace PBFCommon
 
             [DllImport("user32.dll")]
             public static extern ushort GetAsyncKeyState( int vKey );
+
+            #endregion
         }
         
         // Constants
