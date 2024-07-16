@@ -23,48 +23,296 @@ namespace PBFCommon
 
             #endregion
         }
-        
-        // Constants
-        //
-        private const int KEYEVENTF_EXTENDEDKEY = 0x01;
-        private const int KEYEVENTF_KEYUP       = 0x02;
 
-        // Constructors
-        //
+        #region Constants
+
+        private const uint KEYEVENTF_EXTENDEDKEY = 0x01;
+        private const uint KEYEVENTF_KEYUP       = 0x02;
+
+        #endregion
+
+        #region Constructors
+
         //-------------------------------------------------------------------
         static PBFKeyboard()
         {
         } // Constructor - static
 
-        // Properties
-        //
-        #region Properties
+        #endregion
+
+        #region Caps Lock
 
         //-------------------------------------------------------------------
-        public bool CapsLock
+        public static bool CapsLock
         {
-            get { return IsCapsLockOn(); }
+            get { return GetCapsLock(); }
             set { SetCapsLock( value ); }
         }
 
+        public static bool IsCapsLockOn { get { return CapsLock; } }
+
+        public static bool IsCapsLockOff { get { return ! CapsLock; } }
+
         //-------------------------------------------------------------------
-        public bool NumLock
+        private static bool GetCapsLock()
         {
-            get { return IsNumLockOn(); }
+            return Control.IsKeyLocked( Keys.CapsLock );
+        }
+        
+        ///-------------------------------------------------------------------
+        /// <summary>
+        /// SetCapsLock
+        /// </summary>
+        /// <param name="theNewCapsLockState"></param>
+        ///-------------------------------------------------------------------
+        public static void SetCapsLock( bool theNewCapsLockState = false )
+        {
+            if (theNewCapsLockState)
+            {
+                if (IsCapsLockOff)
+                { 
+                    PressExtendedKey( Keys.CapsLock );
+                }
+            }
+            else
+            {
+                if (IsCapsLockOn)
+                { 
+                    PressExtendedKey( Keys.CapsLock );
+                }
+            }
+        }
+
+        //-------------------------------------------------------------------
+        public static void SetCapsLockOn()
+        {
+            SetCapsLock( true );
+        }
+
+        //-------------------------------------------------------------------
+        public static void SetCapsLockOff()
+        {
+            SetCapsLock( false );
+        }
+
+        //-------------------------------------------------------------------
+        public static void ToggleCapsLock()
+        {
+            PressExtendedKey( Keys.CapsLock );
+        }
+
+        #endregion
+
+        #region Num Lock
+
+        //-------------------------------------------------------------------
+        public static bool NumLock
+        {
+            get { return GetNumLock(); }
             set { SetNumLock( value ); }
         }
 
+        public static bool IsNumLockOn { get { return NumLock; } }
+
+        public static bool IsNumLockOff { get { return ! NumLock; } }
+
         //-------------------------------------------------------------------
-        public bool ScrollLock
+        private static bool GetNumLock()
         {
-            get { return IsScrollLockOn(); }
+            return Control.IsKeyLocked( Keys.NumLock );
+        }
+        
+        ///-------------------------------------------------------------------
+        /// <summary>
+        /// SetNumLock
+        /// </summary>
+        /// <param name="theNewNumLockState"></param>
+        ///-------------------------------------------------------------------
+        public static void SetNumLock( bool theNewNumLockState = false )
+        {
+            if (theNewNumLockState)
+            {
+                if (IsNumLockOff)
+                { 
+                    PressExtendedKey( Keys.NumLock );
+                }
+            }
+            else
+            {
+                if (IsNumLockOn)
+                { 
+                    PressExtendedKey( Keys.NumLock );
+                }
+            }
+        }
+
+        //-------------------------------------------------------------------
+        public static void SetNumLockOn()
+        {
+            SetNumLock( true );
+        }
+
+        //-------------------------------------------------------------------
+        public static void SetNumLockOff()
+        {
+            SetNumLock( false );
+        }
+
+        //-------------------------------------------------------------------
+        public static void ToggleNumLock()
+        {
+            PressExtendedKey( Keys.NumLock );
+        }
+
+        #endregion
+
+        #region Scroll Lock
+
+        //-------------------------------------------------------------------
+        public static bool ScrollLock
+        {
+            get { return GetScrollLock(); }
             set { SetScrollLock( value ); }
         }
 
-        #endregion Properties
+        public static bool IsScrollLockOn { get { return ScrollLock; } }
 
-        // Class methods
+        public static bool IsScrollLockOff { get { return ! ScrollLock; } }
+
+        //-------------------------------------------------------------------
+        private static bool GetScrollLock()
+        {
+            return Control.IsKeyLocked( Keys.Scroll );
+        }
+        
+        ///-------------------------------------------------------------------
+        /// <summary>
+        /// SetScrollLock
+        /// </summary>
+        /// <param name="theNewScrollLockState"></param>
+        ///-------------------------------------------------------------------
+        public static void SetScrollLock( bool theNewScrollLockState = false )
+        {
+            if (theNewScrollLockState)
+            {
+                if (IsScrollLockOff)
+                { 
+                    PressExtendedKey( Keys.Scroll );
+                }
+            }
+            else
+            {
+                if (IsScrollLockOn)
+                { 
+                    PressExtendedKey( Keys.Scroll );
+                }
+            }
+        }
+
+        //-------------------------------------------------------------------
+        public static void SetScrollLockOn()
+        {
+            SetScrollLock( true );
+        }
+
+        //-------------------------------------------------------------------
+        public static void SetScrollLockOff()
+        {
+            SetScrollLock( false );
+        }
+
+        //-------------------------------------------------------------------
+        public static void ToggleScrollLock()
+        {
+            PressExtendedKey( Keys.Scroll );
+        }
+
+        #endregion
+
+        // Keyboard Modifier Keys
         //
+        #region Shift
+
+        //-------------------------------------------------------------------
+        public static bool IsShiftKeyDown
+        {
+            get { return Control.ModifierKeys.HasFlag( Keys.Shift ); }
+        }
+
+        public static bool IsLeftShiftKeyDown
+        {
+            get { return IsKeyDown( Keys.LShiftKey ); }
+        }
+
+        public static bool IsRightShiftKeyDown
+        {
+            get { return IsKeyDown( Keys.RShiftKey ); }
+        }
+
+        #endregion
+
+        #region Ctrl
+
+        //-------------------------------------------------------------------
+        public static bool IsCtrlKeyDown
+        {
+            get { return Control.ModifierKeys.HasFlag( Keys.Control ); }
+        }
+
+        public static bool IsLeftCtrlKeyDown
+        {
+            get { return IsKeyDown( Keys.LControlKey ); }
+        }
+
+        public static bool IsRightCtrlKeyDown
+        {
+            get { return IsKeyDown( Keys.RControlKey ); }
+        }
+
+        #endregion
+
+        #region Alt
+
+        //-------------------------------------------------------------------
+        public static bool IsAltKeyDown
+        {
+            get { return Control.ModifierKeys.HasFlag( Keys.Alt ); }
+        }
+
+        public static bool IsLeftAltKeyDown
+        {
+            get { return IsKeyDown( Keys.LMenu ); }
+        }
+
+        public static bool IsRightAltKeyDown
+        {
+            get { return IsKeyDown( Keys.RMenu ); }
+        }
+
+        #endregion
+
+        #region Windows key
+
+        //-------------------------------------------------------------------
+        public static bool IsWindowsKeyDown
+        {
+            get { return IsLeftWindowsKeyDown || IsRightWindowsKeyDown; }
+        }
+
+        public static bool IsLeftWindowsKeyDown
+        {
+            get { return IsKeyDown( Keys.LWin ); }
+        }
+
+        public static bool IsRightWindowsKeyDown
+        {
+            get { return IsKeyDown( Keys.RWin ); }
+        }
+
+        #endregion
+
+        #region Class methods
+
         ///-------------------------------------------------------------------
         /// <summary>
         /// PressExtendedKey
@@ -80,349 +328,18 @@ namespace PBFCommon
             NativeMethods.keybd_event( (byte)theKeyCode, 0x45, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, (IntPtr)null );
         }
 
-        // Caps Lock
-        //
-        #region Caps Lock
-
         ///-------------------------------------------------------------------
         /// <summary>
-        /// IsCapsLockOn
+        /// Returns 'true' if <paramref name="vKey"/> key is currently down.
         /// </summary>
+        /// <param name="vKey"></param>
         ///-------------------------------------------------------------------
-        public static bool IsCapsLockOn()
+        private static bool IsKeyDown(Keys vKey)
         {
-            return Control.IsKeyLocked( Keys.CapsLock );
-        }
-        
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// IsCapsLockOff
-        /// </summary>
-        ///-------------------------------------------------------------------
-        public static bool IsCapsLockOff()
-        {
-            return ! IsCapsLockOn();
+            return (NativeMethods.GetAsyncKeyState( (int)vKey) & 0x8000) != 0;
         }
 
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// SetCapsLock
-        /// </summary>
-        /// <param name="theNewCapsLockState"></param>
-        ///-------------------------------------------------------------------
-        public static void SetCapsLock( bool theNewCapsLockState = false )
-        {
-            if (theNewCapsLockState)
-            {
-                if ( ! IsCapsLockOn())
-                { 
-                    PressExtendedKey( Keys.CapsLock );
-                }
-            }
-            else
-            {
-                if (IsCapsLockOn())
-                { 
-                    PressExtendedKey( Keys.CapsLock );
-                }
-            }
-        }
-
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// SetCapsLockOn
-        /// </summary>
-        ///-------------------------------------------------------------------
-        public static void SetCapsLockOn()
-        {
-            SetCapsLock( true );
-        }
-
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// SetCapsLockOff
-        /// </summary>
-        ///-------------------------------------------------------------------
-        public static void SetCapsLockOff()
-        {
-            SetCapsLock( false );
-        }
-
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// ToggleCapsLock
-        /// </summary>
-        ///-------------------------------------------------------------------
-        public static void ToggleCapsLock()
-        {
-            PressExtendedKey( Keys.CapsLock );
-        }
-
-        #endregion Caps Lock
-
-        // Num Lock
-        //
-        #region Num Lock
-
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// IsNumLockOn
-        /// </summary>
-        ///-------------------------------------------------------------------
-        public static bool IsNumLockOn()
-        {
-            return Control.IsKeyLocked( Keys.NumLock );
-        }
-        
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// IsNumLockOff
-        /// </summary>
-        ///-------------------------------------------------------------------
-        public static bool IsNumLockOff()
-        {
-            return ! IsNumLockOn();
-        }
-
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// SetNumLock
-        /// </summary>
-        /// <param name="theNewNumLockState"></param>
-        ///-------------------------------------------------------------------
-        public static void SetNumLock( bool theNewNumLockState = false )
-        {
-            if (theNewNumLockState)
-            {
-                if ( ! IsNumLockOn())
-                { 
-                    PressExtendedKey( Keys.NumLock );
-                }
-            }
-            else
-            {
-                if (IsNumLockOn())
-                { 
-                    PressExtendedKey( Keys.NumLock );
-                }
-            }
-        }
-
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// SetNumLockOn
-        /// </summary>
-        ///-------------------------------------------------------------------
-        public static void SetNumLockOn()
-        {
-            SetNumLock( true );
-        }
-
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// SetNumLockOff
-        /// </summary>
-        ///-------------------------------------------------------------------
-        public static void SetNumLockOff()
-        {
-            SetNumLock( false );
-        }
-
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// ToggleNumLock
-        /// </summary>
-        ///-------------------------------------------------------------------
-        public static void ToggleNumLock()
-        {
-            PressExtendedKey( Keys.NumLock );
-        }
-
-        #endregion Num Lock
-
-        // Scroll Lock
-        //
-        #region Scroll Lock
-
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// IsScrollLockOn
-        /// </summary>
-        ///-------------------------------------------------------------------
-        public static bool IsScrollLockOn()
-        {
-            return Control.IsKeyLocked( Keys.Scroll );
-        }
-        
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// IsScrollLockOff
-        /// </summary>
-        ///-------------------------------------------------------------------
-        public static bool IsScrollLockOff()
-        {
-            return ! IsScrollLockOn();
-        }
-
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// SetScrollLock
-        /// </summary>
-        /// <param name="theNewScrollLockState"></param>
-        ///-------------------------------------------------------------------
-        public static void SetScrollLock( bool theNewScrollLockState = false )
-        {
-            if (theNewScrollLockState)
-            {
-                if ( ! IsScrollLockOn())
-                { 
-                    PressExtendedKey( Keys.Scroll );
-                }
-            }
-            else
-            {
-                if (IsScrollLockOn())
-                { 
-                    PressExtendedKey( Keys.Scroll );
-                }
-            }
-        }
-
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// SetScrollLockOn
-        /// </summary>
-        ///-------------------------------------------------------------------
-        public static void SetScrollLockOn()
-        {
-            SetScrollLock( true );
-        }
-
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// SetScrollLockOff
-        /// </summary>
-        ///-------------------------------------------------------------------
-        public static void SetScrollLockOff()
-        {
-            SetScrollLock( false );
-        }
-
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// ToggleScrollLock
-        /// </summary>
-        ///-------------------------------------------------------------------
-        public static void ToggleScrollLock()
-        {
-            PressExtendedKey( Keys.Scroll );
-        }
-
-        #endregion Scroll Lock
-
-        // Keyboard Modifier Keys
-        //
-        //-------------------------------------------------------------------
-        public static bool IsKeyDown(Keys vKey)
-        {
-            return (NativeMethods.GetAsyncKeyState( (int)vKey) & 0x8000 ) != 0;
-        }
-
-        // Shift
-        //
-        #region Shift
-
-        //-------------------------------------------------------------------
-        public static bool IsShiftKeyDown()
-        {
-            return Control.ModifierKeys.HasFlag( Keys.Shift );
-        }
-
-        //-------------------------------------------------------------------
-        public static bool IsLeftShiftKeyDown()
-        {
-            return IsKeyDown( Keys.LShiftKey );
-        }
-
-        //-------------------------------------------------------------------
-        public static bool IsRightShiftKeyDown()
-        {
-            return IsKeyDown( Keys.RShiftKey );
-        }
-
-        #endregion Shift
-
-        // Ctrl
-        //
-        #region Ctrl
-
-        //-------------------------------------------------------------------
-        public static bool IsCtrlKeyDown()
-        {
-            return Control.ModifierKeys.HasFlag( Keys.Control );
-        }
-
-        //-------------------------------------------------------------------
-        public static bool IsLeftCtrlKeyDown()
-        {
-            return IsKeyDown( Keys.LControlKey );
-        }
-
-        //-------------------------------------------------------------------
-        public static bool IsRightCtrlKeyDown()
-        {
-            return IsKeyDown( Keys.RControlKey );
-        }
-
-        #endregion Ctrl
-
-        // Alt
-        //
-        #region Alt
-
-        //-------------------------------------------------------------------
-        public static bool IsAltKeyDown()
-        {
-            return Control.ModifierKeys.HasFlag( Keys.Alt );
-        }
-
-        //-------------------------------------------------------------------
-        public static bool IsLeftAltKeyDown()
-        {
-            return IsKeyDown( Keys.LMenu );
-        }
-
-        //-------------------------------------------------------------------
-        public static bool IsRightAltKeyDown()
-        {
-            return IsKeyDown( Keys.RMenu );
-        }
-
-        #endregion Alt
-
-        // Windows key
-        //
-        #region Windows key
-
-        //-------------------------------------------------------------------
-        public static bool IsWindowsKeyDown()
-        {
-            return IsLeftWindowsKeyDown() || IsRightWindowsKeyDown();
-        }
-
-        //-------------------------------------------------------------------
-        public static bool IsLeftWindowsKeyDown()
-        {
-            return IsKeyDown( Keys.LWin );
-        }
-
-        //-------------------------------------------------------------------
-        public static bool IsRightWindowsKeyDown()
-        {
-            return IsKeyDown( Keys.RWin );
-        }
-
-        #endregion Windows key
+        #endregion
 
     } // class - PBFKeyboard
 
