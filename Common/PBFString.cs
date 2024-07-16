@@ -9,16 +9,16 @@ namespace PBFCommon
 {
     public sealed class PBFString
     {
-        // Constructors
-        //
+        #region Constructors
+
         //-------------------------------------------------------------------
         public PBFString()
         {
         } // Constructor - default
 
+        #endregion
 
-        // Class methods
-        //
+        #region Class methods
 
         ///-------------------------------------------------------------------
         /// <summary>
@@ -741,6 +741,8 @@ namespace PBFCommon
 
             return IsPalindrome( dateStr );
         }
+
+        #endregion
 
     } // class - PBFString
 

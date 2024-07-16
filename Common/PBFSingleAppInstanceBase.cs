@@ -10,23 +10,29 @@ namespace PBFCommon
 {
     public class PBFSingleAppInstanceBase : IDisposable
     {
-        // Data members
-        //
+        #region Data members
+
         private static Mutex mSAIMutex = null;
-        
-        // Properties
-        //
+
+        #endregion
+
+        #region Properties
+
         private bool IsDisposed { get { return mSAIMutex == null; } }
 
-        // Constructor (singleton)
-        //
+        #endregion
+
+        #region Constructor (singleton)
+
         //-------------------------------------------------------------------
         private PBFSingleAppInstanceBase()
         {
         }
 
-        // Class methods
-        //
+        #endregion
+
+        #region Class methods
+
         //-------------------------------------------------------------------
         public static bool IsAppInstanceRunning( string theAppID )
         {
@@ -35,8 +41,8 @@ namespace PBFCommon
             return ! saiResultCreatedNew;
         }
 
-        // Dispose
-        //
+        #endregion
+
         #region Dispose
 
         //-------------------------------------------------------------------
@@ -61,7 +67,7 @@ namespace PBFCommon
             }
         }
         
-        #endregion Dispose
+        #endregion
 
     } // class - PBFSingleAppInstanceBase
 

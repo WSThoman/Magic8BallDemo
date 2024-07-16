@@ -10,13 +10,13 @@ namespace PBFCommon
 {
     public abstract class PBFRandomPrevBase
     {
-        // Constants
-        //
+        #region Constants
+
         public const int DEF_MIN = 1;
         public const int DEF_MAX = 10;
 
-        // Properties
-        //
+        #endregion
+
         #region Properties
 
         public int Value { get; private set; } = DEF_MIN;
@@ -37,10 +37,8 @@ namespace PBFCommon
 
         public bool HasPreviousList { get { return PreviousListSize > 0; } }
 
-        #endregion Properties
+        #endregion
 
-        // Constructors
-        //
         #region Constructors
 
         //-------------------------------------------------------------------
@@ -80,19 +78,14 @@ namespace PBFCommon
 
         } // Constructor - default
 
-        #endregion Constructors
+        #endregion
 
-        // Abstract class methods
-        //
-        //-------------------------------------------------------------------
         #region Abstract class methods
 
         protected abstract int CallNext( int theMaxRange );
 
-        #endregion Abstract class methods
+        #endregion
 
-        // Class methods
-        //
         #region Class methods
 
         //-------------------------------------------------------------------
@@ -298,19 +291,19 @@ namespace PBFCommon
             }
         }
 
-        #endregion Class methods
+        #endregion
 
     } // class - PBFRandomPrevBase
 
 
     public sealed class PBFRandomPrevStandard : PBFRandomPrevBase
     {
-        // Data members
-        //
+        #region Data members
+
         private readonly Random mRandomStandard = null;
 
-        // Constructors
-        //
+        #endregion
+
         #region Constructors
 
         //-------------------------------------------------------------------
@@ -320,8 +313,6 @@ namespace PBFCommon
                                       int thePreviousListSize = 0 ) :
             base( theMinRange, theMaxRange, thePreviousListSize )
         {
-            // Random
-            //
             if (theRandomObjStandard != null)
             {
                 mRandomStandard = theRandomObjStandard;
@@ -332,10 +323,8 @@ namespace PBFCommon
             }
         }
 
-        #endregion Constructors
+        #endregion
 
-        // Abstract method implementations
-        //
         #region Abstract method implementations
 
         ///-------------------------------------------------------------------
@@ -349,7 +338,7 @@ namespace PBFCommon
             return mRandomStandard.Next( theMaxRange );
         }
 
-        #endregion Abstract method implementations
+        #endregion
 
     } // class - PBFRandomPrevStandard
 

@@ -11,8 +11,8 @@ namespace PBFCommon
 {
     public sealed class PBFRunAtStartup
     {
-		// Constants
-		//
+		#region Constants
+
         public const string RUN_AT_STARTUP_ROOT_KEY = "HKEY_CURRENT_USER";
 
         public const string RUN_AT_STARTUP_REG_KEY =
@@ -23,15 +23,19 @@ namespace PBFCommon
 
         public const string RUN_AT_STARTUP_VERIFY_PREFIX = "Verify";
 
-        // Constructors
-        //
+        #endregion
+
+        #region Constructors
+
         //-------------------------------------------------------------------
         private PBFRunAtStartup()
         {
         }
-        
-        // Class methods
-        //
+
+        #endregion
+
+        #region Class methods
+
         ///-------------------------------------------------------------------
         /// <summary>
         /// Verifies that the 'run at startup' key can be created. It attempts
@@ -108,6 +112,8 @@ namespace PBFCommon
 
             return false;
         }
+
+        #endregion
 
     } // class - PBFRunAtStartup
 

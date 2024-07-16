@@ -32,8 +32,9 @@ namespace PBFCommon
             public extern static EXECUTION_STATE SetThreadExecutionState( EXECUTION_STATE esFlags );
         }
 
-        // Constants
-        //
+
+        #region Constants
+
         public const int DAYS_PER_WEEK      = 7;
         public const int DAYS_PER_FORTNIGHT = DAYS_PER_WEEK * 2;
 
@@ -58,25 +59,32 @@ namespace PBFCommon
              // ES_USER_PRESENT   = 0x00000004
         }
 
-        // Data members
-        //
+        #endregion
+
+        #region Data members
+
         private static DateTime mSystemStartTime = DateTime.MinValue;
 
-        // Properties
-        //
+        #endregion
+
+        #region Properties
+
         public static TimeSpan UpTime { get { return GetUpTime(); } }
 
         public static DateTime SystemStartTime { get { return GetSystemStartTime(); } }
 
         public static int ProcessCount { get { return GetProcessCount(); } }
 
-        // Constructors
-        //
+        #endregion
+
+        #region Constructors
+
         //-------------------------------------------------------------------
         private PBFSystem()
         {
         } // Constructor - default
 
+        #endregion
 
         ///-------------------------------------------------------------------
         /// <summary>
@@ -555,7 +563,6 @@ namespace PBFCommon
 //                IntPtr csWinHandle = caProcessList[ 0 ].MainWindowHandle;
 //                SetForegroundWindow(csWinHandle);
 //                SendKeys.Send("X");
-
 
                 if (caProcessList.Length > 0)
                 {

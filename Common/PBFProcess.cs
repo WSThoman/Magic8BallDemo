@@ -9,8 +9,6 @@ namespace PBFCommon
 {
     public sealed class PBFProcess
     {
-        // Constructors
-        //
         #region Constructors
 
         //-------------------------------------------------------------------
@@ -18,10 +16,8 @@ namespace PBFCommon
         {
         } // Constructor - singleton
 
-        #endregion Constructors
+        #endregion
 
-        // Class methods
-        //
         #region Class methods
 
         ///-------------------------------------------------------------------
@@ -167,7 +163,7 @@ namespace PBFCommon
             return CPUPriorityIsCheck( theProcess, ProcessPriorityClass.AboveNormal );
         }
 
-        #endregion Class methods
+        #endregion
 
     } // class - PBFProcess
 

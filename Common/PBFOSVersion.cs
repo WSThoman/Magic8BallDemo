@@ -14,8 +14,8 @@ namespace PBFCommon
     //
     public sealed class PBFOSVersion
     {
-        // Properties
-        //
+        #region Properties
+
         public static OperatingSystem OS { get; private set; } = null;
 
         public static Version OSVersion { get; private set; } = null;
@@ -40,8 +40,10 @@ namespace PBFCommon
         
         public static bool IsAtLeastWindows10    { get { return WindowsOSNumber >= 10.0; } }
 
-        // Constructors
-        //
+        #endregion
+
+        #region Constructors
+
         //-------------------------------------------------------------------
         static PBFOSVersion()
         {
@@ -81,6 +83,8 @@ namespace PBFCommon
             WindowsOSNumberStr = WindowsOSNumber.ToString();
 
         } // Constructor - static
+
+        #endregion
 
     } // class - PBFOSVersion
 
