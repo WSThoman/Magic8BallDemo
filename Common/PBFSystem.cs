@@ -95,7 +95,6 @@ namespace PBFCommon
         /// <param name="startMinimized"></param>
         /// <returns>true on success, false on error</returns>
         ///-------------------------------------------------------------------
-        [SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Not needed")]
         public static bool LaunchApplication( string theEXEName, string theCmdLineArgs = "",
                                               bool startMinimized = false )
         {
@@ -197,7 +196,6 @@ namespace PBFCommon
         /// <param name="thePathName"></param>
         /// <returns>true on success, false on error</returns>
         ///-------------------------------------------------------------------
-        [SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Not needed")]
         public static bool LaunchExplorerShell( string thePathName = "" )
         {
             string explorerFullPathName =
@@ -231,7 +229,6 @@ namespace PBFCommon
         /// </summary>
         /// <returns>true on success, false on error</returns>
         ///-------------------------------------------------------------------
-        [SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Not needed")]
         public static bool ExplorerCloseInstances()
         {
             try
@@ -268,7 +265,6 @@ namespace PBFCommon
         /// </summary>
         /// <returns>true on success, false on error</returns>
         ///-------------------------------------------------------------------
-        [SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Not needed")]
         public static bool ExplorerKillInstances( bool killJustTheFirstOne = false )
         {
             Process[] allProcesses = Process.GetProcesses();
@@ -431,7 +427,6 @@ namespace PBFCommon
         /// </summary>
         /// <param name="theURL"></param>
         ///-------------------------------------------------------------------
-        [SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Not needed")]
         public static bool LaunchWebBrowser( string theURL )
         {
             try
@@ -758,7 +753,6 @@ namespace PBFCommon
         /// Returns the system start time as a 'DateTime' object
         /// </summary>
         ///-------------------------------------------------------------------
-        [SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Not needed")]
         public static DateTime GetSystemStartTime()
         {
             if (mSystemStartTime == DateTime.MinValue)
@@ -814,8 +808,6 @@ namespace PBFCommon
                                   @"SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall" );
         }
 
-#pragma warning disable CA1416 // Validate platform compatibility
-
         private static bool IsAppInRegKey( string theAppDisplayName, string theRegistryKey )
         {
             RegistryKey key = Registry.LocalMachine.OpenSubKey( theRegistryKey );
@@ -841,9 +833,7 @@ namespace PBFCommon
             }
 
             return false;
-         }
-
-#pragma warning restore CA1416 // Validate platform compatibility
+        }
 
         ///-------------------------------------------------------------------
         /// <summary>
