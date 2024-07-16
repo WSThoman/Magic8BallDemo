@@ -11,17 +11,17 @@ namespace PBFCommon
     {
         #region Constants
 
-        private const int INDEX_START_ANSWERS_RANDOM   = 0;
-        private const int INDEX_START_ANSWERS_POSITIVE = 0;
-        private const int INDEX_START_ANSWERS_NEUTRAL  = 10;
-        private const int INDEX_START_ANSWERS_NEGATIVE = 15;
+        private const byte INDEX_START_ANSWERS_RANDOM   = 0;
+        private const byte INDEX_START_ANSWERS_POSITIVE = 0;
+        private const byte INDEX_START_ANSWERS_NEUTRAL  = 10;
+        private const byte INDEX_START_ANSWERS_NEGATIVE = 15;
 
-        private const int INDEX_NUM_ANSWERS_RANDOM   = 20;
-        private const int INDEX_NUM_ANSWERS_POSITIVE = 10;
-        private const int INDEX_NUM_ANSWERS_NEUTRAL  = 5;
-        private const int INDEX_NUM_ANSWERS_NEGATIVE = 5;
+        private const byte INDEX_NUM_ANSWERS_RANDOM   = 20;
+        private const byte INDEX_NUM_ANSWERS_POSITIVE = 10;
+        private const byte INDEX_NUM_ANSWERS_NEUTRAL  = 5;
+        private const byte INDEX_NUM_ANSWERS_NEGATIVE = 5;
 
-        private const int PREVIOUS_RANDOM_LIST_SIZE = 3;
+        private const byte PREVIOUS_RANDOM_LIST_SIZE = 3;
 
         public enum AnswerType
         {
@@ -63,7 +63,7 @@ namespace PBFCommon
 
         private readonly PBFRandomPrevStandard mRandomPrev = null;
 
-        private int mAnswerIndex = 0;
+        private byte mAnswerIndex = 0;
 
         #endregion
 
@@ -117,8 +117,9 @@ namespace PBFCommon
         ///-------------------------------------------------------------------
         private void SelectAnAnswer()
         {
-            mAnswerIndex = INDEX_START_ANSWERS_RANDOM +
-                           mRandomPrev.NextButNotPrev( INDEX_NUM_ANSWERS_RANDOM );
+            mAnswerIndex =
+                (byte)(INDEX_START_ANSWERS_RANDOM +
+                       mRandomPrev.NextButNotPrev( INDEX_NUM_ANSWERS_RANDOM ));
         }
 
         ///-------------------------------------------------------------------
@@ -132,8 +133,9 @@ namespace PBFCommon
         ///-------------------------------------------------------------------
         private void SelectAPositiveAnswer()
         {
-            mAnswerIndex = INDEX_START_ANSWERS_POSITIVE +
-                           mRandomPrev.NextButNotPrev( INDEX_NUM_ANSWERS_POSITIVE );
+            mAnswerIndex =
+                (byte)(INDEX_START_ANSWERS_POSITIVE +
+                       mRandomPrev.NextButNotPrev( INDEX_NUM_ANSWERS_POSITIVE ));
         }
 
         ///-------------------------------------------------------------------
@@ -147,8 +149,9 @@ namespace PBFCommon
         ///-------------------------------------------------------------------
         private void SelectANeutralAnswer()
         {
-            mAnswerIndex = INDEX_START_ANSWERS_NEUTRAL +
-                           mRandomPrev.NextButNotPrev( INDEX_NUM_ANSWERS_NEUTRAL );
+            mAnswerIndex =
+                (byte)(INDEX_START_ANSWERS_NEUTRAL +
+                       mRandomPrev.NextButNotPrev( INDEX_NUM_ANSWERS_NEUTRAL ));
         }
 
         ///-------------------------------------------------------------------
@@ -162,8 +165,9 @@ namespace PBFCommon
         ///-------------------------------------------------------------------
         private void SelectANegativeAnswer()
         {
-            mAnswerIndex = INDEX_START_ANSWERS_NEGATIVE +
-                           mRandomPrev.NextButNotPrev( INDEX_NUM_ANSWERS_NEGATIVE );
+            mAnswerIndex =
+                (byte)(INDEX_START_ANSWERS_NEGATIVE +
+                       mRandomPrev.NextButNotPrev( INDEX_NUM_ANSWERS_NEGATIVE ));
         }
 
         ///-------------------------------------------------------------------
