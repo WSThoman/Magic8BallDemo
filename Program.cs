@@ -490,23 +490,11 @@ namespace Magic8BallDemo
         {
             switch (PBFNotifyIconSize.IconSize)
             {
-                case 64:
-                {
-                    mAppNotifyIcon.Icon = Properties.Resources.Magic8Ball64;
-                }
-                break;
+                case 64: mAppNotifyIcon.Icon = Properties.Resources.Magic8Ball64; break;
 
-                case 32:
-                {
-                    mAppNotifyIcon.Icon = Properties.Resources.Magic8Ball32;
-                }
-                break;
+                case 32: mAppNotifyIcon.Icon = Properties.Resources.Magic8Ball32; break;
 
-                default:
-                {
-                    mAppNotifyIcon.Icon = Properties.Resources.Magic8Ball16;
-                }
-                break;
+                default: mAppNotifyIcon.Icon = Properties.Resources.Magic8Ball16; break;
             }
         }
 
