@@ -17,7 +17,7 @@ namespace PBFCommon
             "Tails"
         };
 
-        public enum SideIndexes
+        public enum SideIndexes : byte
         {
             Heads = 0,
             Tails = 1
