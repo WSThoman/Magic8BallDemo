@@ -142,8 +142,6 @@ namespace Magic8BallDemo
 
         #endregion
 
-        // Member Variables (denoted with leading 'm' and marked 'private')
-        //
         #region Data members
 
         // Application's Notification Area icon
@@ -171,7 +169,7 @@ namespace Magic8BallDemo
         /// Starts the application
         /// </summary>
         /// <remarks>
-        /// Called from within Program.Main()
+        /// Called from within <seealso cref="Program.Main"/>
         ///</remarks>
         ///-------------------------------------------------------------------
         public void Start()
@@ -504,8 +502,6 @@ namespace Magic8BallDemo
                 }
                 break;
 
-                // The Windows default size for notification icons is 16x16 pixels
-                //
                 default:
                 {
                     mAppNotifyIcon.Icon = Properties.Resources.Magic8Ball16;
@@ -550,8 +546,6 @@ namespace Magic8BallDemo
                 }
                 break;
 
-                // The Windows default size for notification icons is 16x16 pixels
-                //
                 default:
                 {
                     if (mAskAQuestionCoin.Flip())
