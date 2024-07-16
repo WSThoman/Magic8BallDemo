@@ -37,12 +37,7 @@ namespace PBFCommon
             Process theProcess = null,
             ProcessPriorityClass theNewPriority = ProcessPriorityClass.Normal )
         {
-            Process setProcess = theProcess;
-
-            if (setProcess == null)
-            {
-                setProcess = Process.GetCurrentProcess();
-            }
+            Process setProcess = theProcess ?? Process.GetCurrentProcess();
 
             try
             {
@@ -102,12 +97,7 @@ namespace PBFCommon
         ///-------------------------------------------------------------------
         public static ProcessPriorityClass? GetCPUPriority( Process theProcess = null )
         {
-            Process getProcess = theProcess;
-
-            if (getProcess == null)
-            {
-                getProcess = Process.GetCurrentProcess();
-            }
+            Process getProcess = theProcess ?? Process.GetCurrentProcess();
 
             try
             {
