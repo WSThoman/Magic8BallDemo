@@ -64,7 +64,7 @@ namespace Magic8BallDemo
 
         private const string APP_BALLOON_TIP_TITLE = "Magic 8-Ball Demo";
 
-        public const string PBF_URL_DONATE = "https://www.ParagonBitFoundry.com/donate.html";
+        public const string PBF_URL = "https://www.ParagonBitFoundry.com";
 
         // The number of milliseconds to delay while displaying the 'answer' icon and
         // before re-displaying the main application icon.
@@ -93,13 +93,13 @@ namespace Magic8BallDemo
 
         #endregion
 
-        #region Donate to PBF
+        #region PBF Website
 
-        private static MenuItem miDonateToPBF = null;
+        private static MenuItem miPBFWebsite = null;
 
-        private struct DonateToPBFMenuText
+        private struct PBFWebsiteMenuText
         {
-            public const string Title = "Donate to PBF!";
+            public const string Title = "ParagonBitFoundry.com";
         }
 
         #endregion
@@ -193,8 +193,8 @@ namespace Magic8BallDemo
 
             // Donate to PBF
             //
-            miDonateToPBF = new MenuItem( DonateToPBFMenuText.Title,
-                                          MIEventDonateToPBF );
+            miPBFWebsite = new MenuItem( PBFWebsiteMenuText.Title,
+                                         MIEventPBFWebsite );
 
             // Application's icon
             //
@@ -216,7 +216,7 @@ namespace Magic8BallDemo
 
                                       miIcon,
                                       miApplication,
-                                      miDonateToPBF,
+                                      miPBFWebsite,
 
                                       new MenuItem( "About " + APP_TITLE, MIEventAbout ),
 
@@ -520,9 +520,9 @@ namespace Magic8BallDemo
         // Donate to PBF
         //
         //-------------------------------------------------------------------
-        private void MIEventDonateToPBF( object sender, EventArgs ea )
+        private void MIEventPBFWebsite( object sender, EventArgs ea )
         {
-            PBFSystem.LaunchWebBrowser( PBF_URL_DONATE );
+            PBFSystem.LaunchWebBrowser( PBF_URL );
         }
 
         ///-------------------------------------------------------------------
