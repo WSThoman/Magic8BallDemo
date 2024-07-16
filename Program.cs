@@ -25,7 +25,7 @@ namespace Magic8BallDemo
         {
             // Check if the [Ctrl] key is down
             //
-            if (PBFKeyboard.IsCtrlKeyDown())
+            if (PBFKeyboard.IsCtrlKeyDown)
             {
                 return;
             }
@@ -308,25 +308,25 @@ namespace Magic8BallDemo
                 // Check the keyboard for [Ctrl] and [Shift] states, and
                 // 'load' the answer appropriately:
                 //
+                //   [Ctrl] and [Shift]  Always a Neutral answer
                 //   [Ctrl]              Always a Positive answer
                 //   [Shift]             Always a Negative answer
-                //   [Ctrl] and [Shift]  Always a Neutral answer
                 //   <no modifier keys>  A random answer
                 //
-                if (PBFKeyboard.IsCtrlKeyDown())
+                if (PBFKeyboard.IsCtrlKeyDown &&
+                    PBFKeyboard.IsShiftKeyDown)
+                {
+                    mMagic8Ball.GetAnswerToQuestion( string.Empty, PBFMagic8Ball.AnswerType.Neutral );
+                }
+                else
+                if (PBFKeyboard.IsCtrlKeyDown)
                 {
                     mMagic8Ball.GetAnswerToQuestion( string.Empty, PBFMagic8Ball.AnswerType.Positive );
                 }
                 else
-                if (PBFKeyboard.IsShiftKeyDown())
+                if (PBFKeyboard.IsShiftKeyDown)
                 {
                     mMagic8Ball.GetAnswerToQuestion( string.Empty, PBFMagic8Ball.AnswerType.Negative );
-                }
-                else
-                if (PBFKeyboard.IsCtrlKeyDown() &&
-                    PBFKeyboard.IsShiftKeyDown())
-                {
-                    mMagic8Ball.GetAnswerToQuestion( string.Empty, PBFMagic8Ball.AnswerType.Neutral );
                 }
                 else
                 { 
