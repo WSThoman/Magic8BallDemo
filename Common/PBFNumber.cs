@@ -9,13 +9,24 @@ namespace PBFCommon
 {
     public static class PBFNumber
     {
+        #region Class methods
+
         ///-------------------------------------------------------------------
         /// <summary>
-        /// Returns true if the parity of 'theInt' is odd.
+        /// Returns an 'int' represented by <paramref name="theIntString"/>,
+        /// or <paramref name="theDefaultInt"/> if the string is empty or
+        /// not-a-number (NaN).
+        /// </summary>
+        /// <param name="theIntString"></param>
+        /// <param name="theDefaultInt"></param>
+        ///-------------------------------------------------------------------
+        ///-------------------------------------------------------------------
+        /// <summary>
+        /// Returns true if the parity of <paramref name="theInt"/> is odd.
         /// </summary>
         /// <param name="theInt"></param>
         /// <remarks>
-        /// Zero is defined as an even number.
+        /// Inverse of <seealso cref="IsEven(int)"/>
         /// </remarks>
         ///-------------------------------------------------------------------
         public static bool IsOdd(int theInt)
@@ -31,12 +42,13 @@ namespace PBFCommon
 
         ///-------------------------------------------------------------------
         /// <summary>
-        /// Returns 'theInt' with the ordinal suffix appended.
-        /// All numbers 'mod 100' are supported, and all others simply return
-        /// the number string itself.
+        /// Returns true if the parity of <paramref name="theInt"/> is even.
         /// </summary>
         /// <param name="theInt"></param>
-        /// <seealso cref="ToOrdinalSSStr(int)"/>
+        /// <remarks>
+        /// Inverse of <seealso cref="IsOdd(int)"/>
+        /// Zero is defined as an even number.
+        /// </remarks>
         ///-------------------------------------------------------------------
         public static string ToOrdinalStr( int theInt )
         {
@@ -90,13 +102,12 @@ namespace PBFCommon
 
         ///-------------------------------------------------------------------
         /// <summary>
-        /// Returns 'theInt' with the ordinal suffix appended in super-script
-        /// characters.
+        /// Returns <paramref name="theInt"/> with the ordinal suffix appended
+        /// in super-script characters.
         /// All numbers 'mod 100' are supported, and all others simply return
         /// the number string itself.
         /// </summary>
         /// <param name="theInt"></param>
-        /// <seealso cref="ToOrdinalStr(int)"/>
         ///-------------------------------------------------------------------
         public static string ToOrdinalSSStr( int theInt )
         {
