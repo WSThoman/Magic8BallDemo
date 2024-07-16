@@ -68,7 +68,7 @@ namespace Magic8BallDemo
 
         // Menu item indexes
         //
-        public enum AppMenuIndex : int
+        public enum AppMenuIndex : byte
         {
             AskAQuestion = 0,
             Sep1         = 1,
@@ -95,6 +95,7 @@ namespace Magic8BallDemo
 
         #region Icon sub-menu
 
+        private enum IconMenuIndex : byte
         {
             TaskbarSettings  = 0,
             OpenControlPanel = 1
@@ -114,6 +115,7 @@ namespace Magic8BallDemo
 
         #region Application sub-menu
 
+        private enum ApplicationMenuIndex : byte
         {
             RunAtStartup = 0
         }
