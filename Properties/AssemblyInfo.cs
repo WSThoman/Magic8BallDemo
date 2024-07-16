@@ -35,14 +35,14 @@ using System.Runtime.InteropServices;
 // Not shown in Properties | 'Details' tab, but is manually set to the same
 // value as 'AssemblyFileVersion' below.
 //
-[assembly: AssemblyVersion("1.2.0.0")]
+[assembly: AssemblyVersion("1.3.0.0")]
 
 // File version
 // Commonly set to the same value as 'AssemblyVersion' above.
 //
-[assembly: AssemblyFileVersion("1.2.0.0")]
+[assembly: AssemblyFileVersion("1.3.0.0")]
 
 // Product version
 // Commonly set to the date of the build in 'ccyy.m.d' date format.
 //
-[assembly: AssemblyInformationalVersion("2023.2.22")]
+[assembly: AssemblyInformationalVersion("2024.7.16")]

@@ -3,7 +3,7 @@
     <assemblyIdentity
         type="win32"
         name="Magic8BallDemo"
-        version="1.2.0.0"
+        version="1.3.0.0"
     />
     <description>Magic 8-Ball Demo</description>
     <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
