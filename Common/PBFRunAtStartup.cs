@@ -73,7 +73,8 @@ namespace PBFCommon
         //-------------------------------------------------------------------
         public static bool SetRunAtStartup( string theApplicationName )
         {
-            RegistryKey rkApp = Registry.CurrentUser.OpenSubKey( RUN_AT_STARTUP_REG_KEY, true );
+            RegistryKey rkApp =
+                Registry.CurrentUser.OpenSubKey( RUN_AT_STARTUP_REG_KEY, true );
 
             if (rkApp != null)
             {
@@ -95,7 +96,8 @@ namespace PBFCommon
         //-------------------------------------------------------------------
         public static bool DeleteRunAtStartup( string theApplicationName )
         {
-            RegistryKey rkApp = Registry.CurrentUser.OpenSubKey( RUN_AT_STARTUP_REG_KEY, true );
+            RegistryKey rkApp =
+                Registry.CurrentUser.OpenSubKey( RUN_AT_STARTUP_REG_KEY, true );
 
             if (rkApp != null)
             {

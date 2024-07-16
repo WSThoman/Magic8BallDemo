@@ -36,7 +36,8 @@ namespace PBFCommon
         //-------------------------------------------------------------------
         public static bool IsAppInstanceRunning( string theAppID )
         {
-            mSAIMutex = new Mutex( true, theAppID, out bool saiResultCreatedNew );
+            mSAIMutex =
+                new Mutex( true, theAppID, out bool saiResultCreatedNew );
 
             return ! saiResultCreatedNew;
         }
