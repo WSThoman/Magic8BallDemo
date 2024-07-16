@@ -48,8 +48,7 @@ namespace Magic8BallDemo
             MainCustomAppContext.Start();
 
             Application.Run( MainCustomAppContext );
-
-        } // Main
+        }
 
     } // class - Program
 
@@ -57,8 +56,8 @@ namespace Magic8BallDemo
     //-------------------------------------------------------------------
     public sealed class AppCustomApplicationContext : ApplicationContext
     {
-        // Constants (denoted with all capital letters)
-        //
+        #region Constants
+
         public const string APP_NAME = "Magic8BallDemo";
 
         public const string APP_TITLE = "Magic 8-Ball Demo";
@@ -81,8 +80,10 @@ namespace Magic8BallDemo
             Exit         = 7
         }
 
-        // Donate to PBF
-        //
+        #endregion
+
+        #region Donate to PBF
+
         private static MenuItem miDonateToPBF = null;
 
         private struct DonateToPBFMenuText
@@ -90,9 +91,10 @@ namespace Magic8BallDemo
             public const string Title = "Donate to PBF!";
         }
 
-        // Icon sub-menu
-        //
-        private enum IconMenuIndex
+        #endregion
+
+        #region Icon sub-menu
+
         {
             TaskbarSettings  = 0,
             OpenControlPanel = 1
@@ -108,9 +110,10 @@ namespace Magic8BallDemo
             public const string OpenControlPanel = "Open Control Panel";
         }
 
-        // Application sub-menu
-        //
-        private enum ApplicationMenuIndex
+        #endregion
+
+        #region Application sub-menu
+
         {
             RunAtStartup = 0
         }
@@ -128,9 +131,11 @@ namespace Magic8BallDemo
         // before redisplaying the main application icon
         //
         private const int DELAY_ASK_A_QUESTION = 1 * 1000;
+        #endregion
 
         // Member Variables (denoted with leading 'm' and marked 'private')
         //
+        #region Data members
 
         // Application's Notification Area icon
         //
@@ -148,8 +153,9 @@ namespace Magic8BallDemo
         //
         private readonly PBFCoin mAskAQuestionCoin = new PBFCoin();
 
-        // Class methods
-        //
+        #endregion
+
+        #region Class methods
 
         ///-------------------------------------------------------------------
         /// <summary>
@@ -173,7 +179,7 @@ namespace Magic8BallDemo
             miIcon.MenuItems.Add( IconMenuText.TaskbarSettings,  MIEventIconTaskbarSettings );
             miIcon.MenuItems.Add( IconMenuText.OpenControlPanel, MIEventIconOpenControlPanel );
 
-            #endregion Icon sub-menu
+            #endregion
 
             #region Application sub-menu
 
@@ -181,8 +187,8 @@ namespace Magic8BallDemo
 
             miApplication.MenuItems.Add( ApplicationMenuText.RunAtStartup,
                                          MIEventApplicationRunAtStartup );
+            #endregion
 
-            #endregion Application sub-menu
 
             // Application's icon
             //
@@ -255,11 +261,6 @@ namespace Magic8BallDemo
             // that are running on this machine.
             //
             PBFProcess.SetCPUPriorityToLow();
-
-        } // Start
-
-        #region Events
-
         ///-------------------------------------------------------------------
         /// <summary>
         /// Ask the Magic 8-Ball a question and display the answer.
@@ -474,8 +475,6 @@ namespace Magic8BallDemo
             GC.Collect();
         }
 
-        #endregion Events
-
         ///-------------------------------------------------------------------
         /// <summary>
         /// Changes the main application icon to the appropriate '8-ball' icon.
@@ -576,7 +575,13 @@ namespace Magic8BallDemo
             //
             mAppNotifyIcon.ShowBalloonTip(
                 500, mMagic8Ball.Answer, APP_BALLOON_TIP_TITLE, ToolTipIcon.None );
+        #endregion
+
+        #region Menu Item Events
+
         }
+
+        #endregion
 
     } // class - AppCustomApplicationContext
 
