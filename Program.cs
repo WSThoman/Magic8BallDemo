@@ -176,11 +176,6 @@ namespace Magic8BallDemo
         ///-------------------------------------------------------------------
         public void Start()
         {
-            // Donate to PBF
-            //
-            miDonateToPBF = new MenuItem( DonateToPBFMenuText.Title,
-                                          MIEventDonateToPBF );
-
             #region Icon sub-menu
 
             miIcon = new MenuItem( IconMenuText.Title );
@@ -198,6 +193,10 @@ namespace Magic8BallDemo
                                          MIEventApplicationRunAtStartup );
             #endregion
 
+            // Donate to PBF
+            //
+            miDonateToPBF = new MenuItem( DonateToPBFMenuText.Title,
+                                          MIEventDonateToPBF );
 
             // Application's icon
             //
