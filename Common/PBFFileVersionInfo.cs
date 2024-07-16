@@ -11,12 +11,14 @@ namespace PBFCommon
 {
     public sealed class PBFFileVersionInfo
     {
-        // Data members
-        //
+        #region Data members
+
         private static Version mFileVersion = null;
 
-        // Properties
-        //
+        #endregion
+
+        #region Properties
+
         public static FileVersionInfo EXEsFVI { get; private set; } = null;
 
         public static string LastError { get; private set; } = string.Empty;
@@ -91,8 +93,10 @@ namespace PBFCommon
             get { return (EXEsFVI != null) ? EXEsFVI.LegalTrademarks: string.Empty; }
         }
 
-        // Constructors
-        //
+        #endregion
+
+        #region Constructors
+
         //-------------------------------------------------------------------
         static PBFFileVersionInfo()
         {
@@ -106,8 +110,9 @@ namespace PBFCommon
 
         } // Constructor - default
 
-        // Class methods
-        //
+        #endregion
+
+        #region Class methods
 
         ///-------------------------------------------------------------------
         /// <summary>
@@ -296,6 +301,8 @@ namespace PBFCommon
                 }
             }
         }
+
+        #endregion
 
     } // class - PBFFileVersionInfo
 

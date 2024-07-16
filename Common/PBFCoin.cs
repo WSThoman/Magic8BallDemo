@@ -9,8 +9,8 @@ namespace PBFCommon
 {
     public class PBFCoin
     {
-        // Constants
-        //
+        #region Constants
+
         private readonly string[] mSides =
         {
             "Heads",
@@ -23,12 +23,14 @@ namespace PBFCommon
             Tails = 1
         }
 
-        // Member variables
-        //
+        #endregion
+
+        #region Data members
+
         private readonly Random mRandom = null;
 
-        // Properties
-        //
+        #endregion
+
         #region Properties
 
         public string Side { get { return mSides[ (int)SideIndex ]; } }
@@ -39,10 +41,10 @@ namespace PBFCommon
 
         public bool IsTails { get { return ! IsHeads; } }
 
-        #endregion Properties
+        #endregion
 
-        // Constructors
-        //
+        #region Constructors
+
         //-------------------------------------------------------------------
         public PBFCoin( Random theRandomObj = null )
         {
@@ -59,8 +61,8 @@ namespace PBFCommon
 
         } // Constructor - default
 
-        // Class methods
-        //
+        #endregion
+
         #region Class methods
 
         ///-------------------------------------------------------------------
@@ -75,7 +77,6 @@ namespace PBFCommon
         /// the read-only property 'Side' to return the corresponding string.
         /// </remarks>
         ///-------------------------------------------------------------------
-        /// 
         public bool Flip()
         {
             SideIndex = (SideIndexes)mRandom.Next( mSides.Length );
@@ -95,7 +96,7 @@ namespace PBFCommon
             SideIndex = SideIndexes.Tails;
         }
 
-        #endregion Class methods
+        #endregion
 
     } // class - PBFCoin
 

@@ -11,8 +11,6 @@ namespace PBFCommon
     {
         private sealed class NativeMethods
         {
-            // extern's
-            //
             [DllImport("user32.dll")]
             public static extern int GetSystemMetrics( int nIndex );
         }
@@ -24,12 +22,12 @@ namespace PBFCommon
         //
         private const int SM_CXSMICON = 49;
 
-        // Properties
-        //
+        #region Properties
+
         public static int IconSize { get; private set; } = 0;
 
-        // Constructors
-        //
+        #endregion
+
         #region Constructors
 
         //-------------------------------------------------------------------
@@ -39,15 +37,17 @@ namespace PBFCommon
 
         } // Constructor - static
 
-        #endregion Constructors
+        #endregion
 
-        // Class methods
-        //
+        #region Class methods
+
         //-------------------------------------------------------------------
         private static void GetIconSize()
         {
             IconSize = NativeMethods.GetSystemMetrics( SM_CXSMICON );
         }
+
+        #endregion
 
     } // class - PBFNotifyIconSize
 
