@@ -110,9 +110,9 @@ namespace PBFCommon
         /// Selects a random answer from the array of all possible answers.
         /// </summary>
         /// <remarks>
-        /// Sets 'mAnswerIndex' to a random number, which is later used by
-        /// the read-only property 'Answer' to return the corresponding
-        /// string.
+        /// Sets <see cref="mAnswerIndex"/> to a random number, which is later
+        /// used by the read-only property <seealso cref="Answer"/> to return
+        /// the corresponding string.
         /// </remarks>
         ///-------------------------------------------------------------------
         private void SelectAnAnswer()
@@ -126,8 +126,8 @@ namespace PBFCommon
         /// Selects a random 'positive' answer from the array of possible answers.
         /// </summary>
         /// <remarks>
-        /// Sets 'mAnswerIndex' to a random 'positive'/'Yes' answer.
-        /// Similar to 'SelectAnAnswer()'.
+        /// Sets <see cref="mAnswerIndex"/> to a random 'positive'/'Yes' answer.
+        /// Similar to <seealso cref="SelectAnAnswer"/>.
         /// </remarks>
         ///-------------------------------------------------------------------
         private void SelectAPositiveAnswer()
@@ -141,8 +141,8 @@ namespace PBFCommon
         /// Selects a random 'neutral' answer from the array of possible answers.
         /// </summary>
         /// <remarks>
-        /// Sets 'mAnswerIndex' to a random 'neutral'/'Maybe' answer.
-        /// Similar to 'SelectAnAnswer()'.
+        /// Sets <see cref="mAnswerIndex"/> to a random 'neutral'/'Maybe' answer.
+        /// Similar to <seealso cref="SelectAnAnswer"/>.
         /// </remarks>
         ///-------------------------------------------------------------------
         private void SelectANeutralAnswer()
@@ -156,8 +156,8 @@ namespace PBFCommon
         /// Selects a random 'negative' answer from the array of possible answers.
         /// </summary>
         /// <remarks>
-        /// Sets 'mAnswerIndex' to a random 'negative'/'No' answer.
-        /// Similar to 'SelectAnAnswer()'.
+        /// Sets <see cref="mAnswerIndex"/> to a random 'negative'/'No' answer.
+        /// Similar to <seealso cref="SelectAnAnswer"/>.
         /// </remarks>
         ///-------------------------------------------------------------------
         private void SelectANegativeAnswer()
@@ -172,7 +172,8 @@ namespace PBFCommon
         /// </summary>
         /// <param name="theQuestion"></param>
         /// <remarks>
-        /// Note that the parameter 'theQuestion' is, of course, not used.
+        /// Note that the parameter <paramref name="theQuestion"/> is, of course,
+        /// not used.
         /// </remarks>
         ///-------------------------------------------------------------------
         public string GetAnswerToQuestion( string theQuestion = "",
