@@ -62,7 +62,7 @@ namespace PBFCommon
 
             if (disposing)
             {
-                mSAIMutex.ReleaseMutex();
+                mSAIMutex?.ReleaseMutex();
 
                 mSAIMutex = null;
             }
