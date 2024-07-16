@@ -267,126 +267,6 @@ namespace Magic8BallDemo
             // that are running on this machine.
             //
             PBFProcess.SetCPUPriorityToLow();
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// Ask the Magic 8-Ball a question and display the answer.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="ea"></param>
-        /// <remarks>
-        /// This method demonstrates the principle of 'separation of concerns',
-        /// where calculations are performed in one step, and the results of
-        /// those calculations are displayed in another step.
-        /// </remarks>
-        ///-------------------------------------------------------------------
-        private void MIEventAskAQuestion( object sender, EventArgs ea )
-        {
-            StartAskAQuestionTimer();
-        }
-
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// For Windows 8 and higher, launches the Taskbar Settings page
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="ea"></param>
-        ///-------------------------------------------------------------------
-        private void MIEventIconTaskbarSettings( object sender, EventArgs ea )
-        {
-            PBFSystem.LaunchTaskbarSettings();
-        }
-
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// For all versions of Windows, launches the Control Panel applet.
-        /// For Windows 7, it also lands on the 'Notification Area Icons' section.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="ea"></param>
-        ///-------------------------------------------------------------------
-        private void MIEventIconOpenControlPanel( object sender, EventArgs ea )
-        {
-            PBFSystem.LaunchControlPanel( PBFOSVersion.IsWindows7 );
-        }
-
-        // Application
-        //
-        //-------------------------------------------------------------------
-        private void MIEventApplicationRunAtStartup( object sender, EventArgs ea )
-        {
-            if ( ! miApplication.MenuItems[ (int)ApplicationMenuIndex.RunAtStartup ].Enabled)
-            {
-                return;
-            }
-
-            if (((MenuItem)sender).Checked)
-            {
-                PBFRunAtStartup.DeleteRunAtStartup( APP_NAME );
-            }
-            else
-            {
-                PBFRunAtStartup.SetRunAtStartup( APP_NAME );
-            }
-
-            ((MenuItem)sender).Checked = ! ((MenuItem)sender).Checked;
-        }
-        
-        // Donate to PBF
-        //
-        //-------------------------------------------------------------------
-        private void MIEventDonateToPBF( object sender, EventArgs ea )
-        {
-            PBFSystem.LaunchWebBrowser( PBF_URL_DONATE );
-        }
-
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// Displays the 'About' dialog box
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="ea"></param>
-        ///-------------------------------------------------------------------
-        private void MIEventAbout( object sender, EventArgs ea )
-        {
-            if ( ! mAppNotifyIcon.ContextMenu.MenuItems[ (int)AppMenuIndex.About ].Enabled)
-            {
-                return;
-            }
-
-            mAppNotifyIcon.ContextMenu.MenuItems[ (int)AppMenuIndex.About ].Enabled = false;
-
-            try
-            {
-                MessageBox.Show(
-                    PBFFileVersionInfo.Description + "\n\n" +
-                    PBFFileVersionInfo.Copyright + "\n\n" +
-                    "Visit ParagonBitFoundry.com for more extraordinary software!",
-                    APP_TITLE + " v" + PBFFileVersionInfo.FileVersionStr,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information );
-            }
-            finally
-            {
-                mAppNotifyIcon.ContextMenu.MenuItems[ (int)AppMenuIndex.About ].Enabled = true;
-            }
-        }
-
-        ///-------------------------------------------------------------------
-        /// <summary>
-        /// Hides the application's icon, and exits the program.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="ea"></param>
-        ///-------------------------------------------------------------------
-        private void MIEventExit( object sender, EventArgs ea )
-        {
-            // Hide the program's icon
-            //
-            mAppNotifyIcon.Visible = false;
-
-            // Exit the program
-            //
-            Application.Exit();
         }
 
         ///-------------------------------------------------------------------
@@ -574,6 +454,125 @@ namespace Magic8BallDemo
 
         #region Menu Item Events
 
+        ///-------------------------------------------------------------------
+        /// <summary>
+        /// Ask the Magic 8-Ball a question and display the answer.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="ea"></param>
+        /// <remarks>
+        /// This method demonstrates the principle of 'separation of concerns',
+        /// where calculations are performed in one step, and the results of
+        /// those calculations are displayed in another step.
+        /// </remarks>
+        ///-------------------------------------------------------------------
+        private void MIEventAskAQuestion( object sender, EventArgs ea )
+        {
+            StartAskAQuestionTimer();
+        }
+
+        ///-------------------------------------------------------------------
+        /// <summary>
+        /// Launches the Taskbar Settings page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="ea"></param>
+        ///-------------------------------------------------------------------
+        private void MIEventIconTaskbarSettings( object sender, EventArgs ea )
+        {
+            PBFSystem.LaunchTaskbarSettings();
+        }
+
+        ///-------------------------------------------------------------------
+        /// <summary>
+        /// Launches the Control Panel applet.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="ea"></param>
+        ///-------------------------------------------------------------------
+        private void MIEventIconOpenControlPanel( object sender, EventArgs ea )
+        {
+            PBFSystem.LaunchControlPanel( PBFOSVersion.IsWindows7 );
+        }
+
+        // Application
+        //
+        //-------------------------------------------------------------------
+        private void MIEventApplicationRunAtStartup( object sender, EventArgs ea )
+        {
+            if ( ! miApplication.MenuItems[ (int)ApplicationMenuIndex.RunAtStartup ].Enabled)
+            {
+                return;
+            }
+
+            if (((MenuItem)sender).Checked)
+            {
+                PBFRunAtStartup.DeleteRunAtStartup( APP_NAME );
+            }
+            else
+            {
+                PBFRunAtStartup.SetRunAtStartup( APP_NAME );
+            }
+
+            ((MenuItem)sender).Checked = ! ((MenuItem)sender).Checked;
+        }
+        
+        // Donate to PBF
+        //
+        //-------------------------------------------------------------------
+        private void MIEventDonateToPBF( object sender, EventArgs ea )
+        {
+            PBFSystem.LaunchWebBrowser( PBF_URL_DONATE );
+        }
+
+        ///-------------------------------------------------------------------
+        /// <summary>
+        /// Displays the 'About' dialog box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="ea"></param>
+        ///-------------------------------------------------------------------
+        private void MIEventAbout( object sender, EventArgs ea )
+        {
+            if ( ! mAppNotifyIcon.ContextMenu.MenuItems[ (int)AppMenuIndex.About ].Enabled)
+            {
+                return;
+            }
+
+            mAppNotifyIcon.ContextMenu.MenuItems[ (int)AppMenuIndex.About ].Enabled = false;
+
+            try
+            {
+                MessageBox.Show(
+                    PBFFileVersionInfo.Description + "\n\n" +
+                    PBFFileVersionInfo.Copyright + "\n\n" +
+                    "Visit ParagonBitFoundry.com for more extraordinary software!",
+                    APP_TITLE + " v" + PBFFileVersionInfo.FileVersionStr,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information );
+            }
+            finally
+            {
+                mAppNotifyIcon.ContextMenu.MenuItems[ (int)AppMenuIndex.About ].Enabled = true;
+            }
+        }
+
+        ///-------------------------------------------------------------------
+        /// <summary>
+        /// Hides the application's icon, and exits the program.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="ea"></param>
+        ///-------------------------------------------------------------------
+        private void MIEventExit( object sender, EventArgs ea )
+        {
+            // Hide the program's icon
+            //
+            mAppNotifyIcon.Visible = false;
+
+            // Exit the program
+            //
+            Application.Exit();
         }
 
         #endregion
