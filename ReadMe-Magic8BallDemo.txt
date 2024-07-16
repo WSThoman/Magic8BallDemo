@@ -11,8 +11,8 @@ C:\PBF\Magic8BallDemo.  Uninstalling the application is also easy, just delete t
 installation folder.
 
 System Requirements
-Magic8BallDemo requires version 4.8 of the .NET Framework that is provided free of
-charge with Windows.  It's included free with Windows 8 and higher.
+Magic8BallDemo requires version 4.8.1 of the .NET Framework that is provided free of
+charge with Windows.
 
 Configuration
 Magic8BallDemo is a small and efficient -ambient icon- that displays a white number
@@ -20,13 +20,9 @@ Magic8BallDemo is a small and efficient -ambient icon- that displays a white num
 found in the bottom-right corner of the screen near the clock, and it contains
 several icons representing other background programs.  Although it requires no
 configuration itself, Magic8BallDemo needs to tell Windows to display its icon on the
-taskbar so it is always visible.  Follow the steps below for your version of Windows
-for more information.
+taskbar so it is always visible.  Follow the steps below for more information.
 
-For Windows 8, Windows 8.1, Windows 10 and higher
-
-For Windows 7
-In the Windows notification area, look for a small upside-down 'V' or triangle that
+In the Windows notification area, look for a small upside-down 'V' or '^' symbol that
 is pointing upward on the left side of the row of visible icons.  Click it and you'll
 see Magic8BallDemo among other application icons.  Click and drag the icon to the
 notification area and you're done!  If you prefer, you can click on the 'Customize...'
@@ -45,11 +41,7 @@ the [Shift] key, and a neutral 'Maybe' answer by holding down both the [Ctrl] an
 [Shift] keys while clicking the icon.
 
 The 'Icon' sub-menu can assist you in displaying the application icon on the taskbar.
-The 'Taskbar Settings' option will conveniently display the Taskbar page for Windows 8
-and higher, but it will be disabled for Windows 7 installations.  Similarly, 'Open
-Control Panel' will start the Control Panel applet for all supported Windows versions,
-and the 'Notification Area Icons' link on this page will be selected.  These options
-allow you to quickly locate and change the necessary Windows setting to display
+The 'Taskbar Settings' option will conveniently display the Taskbar page.  Similarly, 'Open Control Panel' will start the Control Panel applet for all supported Windows versions, and the 'Notification Area Icons' link on this page will be selected.  These options allow you to quickly locate and change the necessary Windows setting to display
 Magic8BallDemo on the taskbar.
 
 On the 'Application' sub-menu, the 'Run at Startup' menu option is a very useful
@@ -59,9 +51,11 @@ account does not have sufficient permissions to save this setting to the Windows
 Registry.  If you require additional privileges, see your system administrator for
 assistance.
 
-The 'About Magic8BallDemo' selection will display a small dialog box with more
-information about this and other Paragon Bit Foundry applications.  Finally, the
-'Exit' option will remove the icon from the taskbar and close the application.
+The 'ParagonBitFoundry.com' menu option will open a browser window directly to the
+website where this application and many, many others can be found.
+The 'About Magic 8-Ball Demo' selection will display a small dialog box with more
+information about this application, and finally, the 'Exit' option will remove the
+icon from the taskbar and close the application.
 
 Credits
 Thank you for downloading Magic8BallDemo!
