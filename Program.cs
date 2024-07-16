@@ -191,7 +191,7 @@ namespace Magic8BallDemo
                                          MIEventApplicationRunAtStartup );
             #endregion
 
-            // Donate to PBF
+            // PBF Website
             //
             miPBFWebsite = new MenuItem( PBFWebsiteMenuText.Title,
                                          MIEventPBFWebsite );
@@ -517,8 +517,6 @@ namespace Magic8BallDemo
             ((MenuItem)sender).Checked = ! ((MenuItem)sender).Checked;
         }
         
-        // Donate to PBF
-        //
         //-------------------------------------------------------------------
         private void MIEventPBFWebsite( object sender, EventArgs ea )
         {
