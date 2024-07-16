@@ -30,8 +30,13 @@ namespace PBFCommon
         /// </summary>
         /// <param name="theProcess"></param>
         /// <param name="theNewPriority"></param>
-        /// <remarks>If 'theProcess' is null, the current process is used.</remarks>
-        /// <returns>Returns 'false' on success, 'true' on error</returns>
+        /// <remarks>
+        /// If <paramref name="theProcess"/> is null, the current process
+        /// is used.
+        /// </remarks>
+        /// <returns>
+        /// Returns 'false' on success, 'true' on error
+        /// </returns>
         ///-------------------------------------------------------------------
         public static bool SetCPUPriority(
             Process theProcess = null,
@@ -92,8 +97,14 @@ namespace PBFCommon
         /// Gets the CPU Priority of 'theProcess'
         /// </summary>
         /// <param name="theProcess"></param>
-        /// <remarks>If 'theProcess' is null, the current process is used.</remarks>
-        /// <returns>Returns 'ProcessPriorityClass' on success, null on error</returns>
+        /// <remarks>
+        /// If <paramref name="theProcess"/> is null, the current process
+        /// is used.
+        /// </remarks>
+        /// <returns>
+        /// Returns <see cref="ProcessPriorityClass"/> on success,
+        /// null on error
+        /// </returns>
         ///-------------------------------------------------------------------
         public static ProcessPriorityClass? GetCPUPriority( Process theProcess = null )
         {

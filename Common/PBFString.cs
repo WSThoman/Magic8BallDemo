@@ -22,8 +22,8 @@ namespace PBFCommon
 
         ///-------------------------------------------------------------------
         /// <summary>
-        /// Returns an "s" string if 'theNumber' is not '1', else
-        /// an empty string.
+        /// Returns an "s" string if <paramref name="theInt"/> is not '1',
+        /// else an empty string.
         /// </summary>
         /// <param name="theInt"></param>
         ///-------------------------------------------------------------------
@@ -34,8 +34,8 @@ namespace PBFCommon
 
         ///-------------------------------------------------------------------
         /// <summary>
-        /// Returns an "s" string if 'theNumber' is not '1', else
-        /// an empty string.
+        /// Returns an "s" string if <paramref name="theUInt"/> is not '1',
+        /// else an empty string.
         /// </summary>
         /// <param name="theUInt"></param>
         ///-------------------------------------------------------------------
@@ -46,8 +46,8 @@ namespace PBFCommon
 
         ///-------------------------------------------------------------------
         /// <summary>
-        /// Returns an "s" string if 'theNumber' is not '1', else
-        /// an empty string.
+        /// Returns an "s" string if <paramref name="theLong"/> is not '1',
+        /// else an empty string.
         /// </summary>
         /// <param name="theLong"></param>
         ///-------------------------------------------------------------------
