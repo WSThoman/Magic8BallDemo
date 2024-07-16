@@ -20,6 +20,26 @@ namespace PBFCommon
         /// <param name="theIntString"></param>
         /// <param name="theDefaultInt"></param>
         ///-------------------------------------------------------------------
+        public static int StrToIntDef( string theIntString, int theDefaultInt = 0 )
+        {
+            int retInt = theDefaultInt;
+
+            if ( ! string.IsNullOrEmpty( theIntString ))
+            {
+                try
+                {
+                    retInt = int.Parse( theIntString );
+                }
+                catch (ArgumentNullException) {}
+                catch (FormatException) {}
+                catch (OverflowException)
+                {
+                }
+            }
+
+            return retInt;
+        }
+
         ///-------------------------------------------------------------------
         /// <summary>
         /// Returns true if the parity of <paramref name="theInt"/> is odd.
@@ -34,12 +54,6 @@ namespace PBFCommon
             return (theInt % 2) == 1;
         }
 
-        //-------------------------------------------------------------------
-        public static bool IsEven(int theInt)
-        {
-            return ! IsOdd(theInt);
-        }
-
         ///-------------------------------------------------------------------
         /// <summary>
         /// Returns true if the parity of <paramref name="theInt"/> is even.
@@ -50,54 +64,9 @@ namespace PBFCommon
         /// Zero is defined as an even number.
         /// </remarks>
         ///-------------------------------------------------------------------
-        public static string ToOrdinalStr( int theInt )
+        public static bool IsEven(int theInt)
         {
-            string[] ordinalArr = new string[ 100 +1 ]
-            {
-                "th",
-
-                "st", "nd", "rd", "th", "th",
-                "th", "th", "th", "th", "th",
-
-	            "th", "th", "th", "th", "th",
-                "th", "th", "th", "th", "th",
-
-                "st", "nd", "rd", "th", "th",
-                "th", "th", "th", "th", "th",
-
-                "st", "nd", "rd", "th", "th",
-                "th", "th", "th", "th", "th",
-
-                "st", "nd", "rd", "th", "th",
-                "th", "th", "th", "th", "th",
-
-                "st", "nd", "rd", "th", "th",
-                "th", "th", "th", "th", "th",
-
-                "st", "nd", "rd", "th", "th",
-                "th", "th", "th", "th", "th",
-
-                "st", "nd", "rd", "th", "th",
-                "th", "th", "th", "th", "th",
-
-                "st", "nd", "rd", "th", "th",
-                "th", "th", "th", "th", "th",
-
-                "st", "nd", "rd", "th", "th",
-                "th", "th", "th", "th", "th"
-            };
-
-            int modInt = Math.Abs( theInt ) % 100;
-
-            modInt = (modInt == 0) ? 100 : modInt;
-
-            return theInt.ToString() + ordinalArr[ modInt ];
-        }
-
-        //-------------------------------------------------------------------
-        public static string ToOrdinalStr( uint theUInt )
-        {
-            return ToOrdinalStr( (int)theUInt );
+            return ! IsOdd(theInt);
         }
 
         ///-------------------------------------------------------------------
