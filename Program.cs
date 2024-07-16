@@ -404,8 +404,8 @@ namespace Magic8BallDemo
             mAskAQuestionTimer =
                 new System.Threading.Timer( AskAQuestionTimer_Callback,
                                             null,
-                                            DELAY_ASK_A_QUESTION,
-                                            0 );
+                                            ASK_A_QUESTION_DELAY,
+                                            ASK_A_QUESTION_PERIOD );
         }
 
         ///-------------------------------------------------------------------
@@ -576,7 +576,12 @@ namespace Magic8BallDemo
             // Show a balloon tip with the answer
             //
             mAppNotifyIcon.ShowBalloonTip(
-                500, mMagic8Ball.Answer, APP_BALLOON_TIP_TITLE, ToolTipIcon.None );
+                SHOW_BALLOON_TIP_TIMEOUT,
+                mMagic8Ball.Answer,
+                APP_BALLOON_TIP_TITLE,
+                ToolTipIcon.None );
+        }
+
         #endregion
 
         #region Menu Item Events
