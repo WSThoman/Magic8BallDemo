@@ -66,6 +66,17 @@ namespace Magic8BallDemo
 
         public const string PBF_URL_DONATE = "https://www.ParagonBitFoundry.com/donate.html";
 
+        // The number of milliseconds to delay while displaying the 'answer' icon and
+        // before re-displaying the main application icon.
+        //
+        private const ushort ONE_SEC_IN_MSEC = 1000;
+
+        private const ushort ASK_A_QUESTION_DELAY = ONE_SEC_IN_MSEC;
+
+        private const ushort ASK_A_QUESTION_PERIOD = 0;
+
+        private const ushort SHOW_BALLOON_TIP_TIMEOUT = ONE_SEC_IN_MSEC;
+
         // Menu item indexes
         //
         public enum AppMenuIndex : byte
@@ -129,10 +140,6 @@ namespace Magic8BallDemo
             public const string RunAtStartup = "Run at Startup";
         }
 
-        // The number of milliseconds to delay while displaying the 'answer' icon and
-        // before redisplaying the main application icon
-        //
-        private const int DELAY_ASK_A_QUESTION = 1 * 1000;
         #endregion
 
         // Member Variables (denoted with leading 'm' and marked 'private')
