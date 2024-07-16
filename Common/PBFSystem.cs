@@ -304,10 +304,6 @@ namespace PBFCommon
                 ExplorerKillInstances();
             }
                         
-//Process.Start( EXPLORER_EXE_FILENAME );
-//            ShellExecute(NULL, NULL, EXPLORER_EXE_FILENAME, NULL, NULL, SW_SHOW );  // not in C#
-//            LaunchExplorer();
-
             LaunchExplorerShell();
 
             return false;
@@ -528,15 +524,6 @@ namespace PBFCommon
             LaunchApplication( Environment.GetFolderPath( Environment.SpecialFolder.UserProfile ) );
         }
 
-//        // Activate an application window.
-//        [DllImport("USER32.DLL")]
-//        public static extern bool SetForegroundWindow(IntPtr hWnd);
-
-//        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
-//        private static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
-//
-//        private static uint WM_CLOSE = 0x10;
-
         ///-------------------------------------------------------------------
         /// <summary>
         /// CloseApplication
@@ -552,23 +539,11 @@ namespace PBFCommon
             {
                 caProcessList = Process.GetProcessesByName(theAppName);
                                
-                // WM_Click is 0x00F5
-//        public const int WM_RBUTTONDOWN = 0x0204;
-//        public const int WM_RBUTTONUP = 0x0205;
-//
-//                IntPtr csWinHandle = caProcessList[ 0 ].MainWindowHandle;
-//                SetForegroundWindow(csWinHandle);
-//                SendKeys.Send("X");
-
                 if (caProcessList.Length > 0)
                 {
                     caProcessList[ 0 ].Kill();
 
                     caProcessList[ 0 ].Close();
-
-//                    caProcessList[ 0 ].CloseMainWindow();
-
-//                    SendMessage(caProcessList[ 0 ].Handle, WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
 
                     return true;
                 }
