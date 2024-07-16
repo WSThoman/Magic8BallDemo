@@ -1,6 +1,6 @@
 ﻿//---------------------------------------------------------------------------
 //
-// Copyright © 2016-2021 Paragon Bit Foundry.  All Rights Reserved.
+// Copyright © 2016-2024 Paragon Bit Foundry.  All Rights Reserved.
 //
 //---------------------------------------------------------------------------
 using Microsoft.Win32;

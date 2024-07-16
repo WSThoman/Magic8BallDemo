@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Paragon Bit Foundry")]
 [assembly: AssemblyProduct("Magic8BallDemo")]
-[assembly: AssemblyCopyright("Copyright © 2017-2023 Paragon Bit Foundry.\r\nAll Rights Reserved.")]
+[assembly: AssemblyCopyright("Copyright © 2017-2024 Paragon Bit Foundry.\r\nAll Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

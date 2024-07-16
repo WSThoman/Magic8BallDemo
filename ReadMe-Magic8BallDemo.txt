@@ -68,6 +68,6 @@ Thank you for downloading Magic8BallDemo!
 
 Visit www.ParagonBitFoundry.com for more extraordinary software!
 
-Copyright (c) 2017-2023 Paragon Bit Foundry.  All Rights Reserved.
+Copyright (c) 2017-2024 Paragon Bit Foundry.  All Rights Reserved.
 
 ###

@@ -1,6 +1,6 @@
 ﻿//---------------------------------------------------------------------------
 //
-// Copyright © 2015-2021 Paragon Bit Foundry.  All Rights Reserved.
+// Copyright © 2015-2024 Paragon Bit Foundry.  All Rights Reserved.
 //
 //---------------------------------------------------------------------------
 using System;
