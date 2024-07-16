@@ -114,9 +114,10 @@ namespace PBFCommon
             {
             }
 #else
-            ProcessStartInfo psiObj = new ProcessStartInfo();
-
-            psiObj.FileName = theEXEName;
+            ProcessStartInfo psiObj = new ProcessStartInfo
+            {
+                FileName = theEXEName
+            };
 
             if (theCmdLineArgs.Length > 0)
             {
