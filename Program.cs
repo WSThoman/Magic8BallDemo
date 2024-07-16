@@ -62,7 +62,7 @@ namespace Magic8BallDemo
 
         public const string APP_TITLE = "Magic 8-Ball Demo";
 
-        private const string APP_BALLOON_TIP_TITLE = "Magic 8-Ball";
+        private const string APP_BALLOON_TIP_TITLE = "Magic 8-Ball Demo";
 
         public const string PBF_URL_DONATE = "https://www.ParagonBitFoundry.com/donate.html";
 
