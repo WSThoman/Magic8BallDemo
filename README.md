@@ -1,20 +1,20 @@
-Overview
+<ins>Overview</ins>  
 Magic8BallDemo is a Windows notification icon application that allows you to consult
 the classic children's toy for answers to your most pressing questions!  Simply click
 the icon and a new answer will appear!
 
-Installation
+<ins>Installation</ins>  
 Installing the application couldn't be easier, simply copy Magic8BallDemo.exe to
 any folder you like and you're done!  Magic8BallDemo consists of a single file
 and though it can be run from any folder, the recommended location is
 C:\PBF\Magic8BallDemo.  Uninstalling the application is also easy, just delete the
 installation folder.
 
-System Requirements
+<ins>System Requirements</ins>  
 Magic8BallDemo requires version 4.8.1 of the .NET Framework that is provided free of
 charge with Windows.
 
-Configuration
+<ins>Configuration</ins>  
 Magic8BallDemo is a small and efficient -ambient icon- that displays a white number
 '8' within a black circle in the Windows notification area.  This area is normally
 found in the bottom-right corner of the screen near the clock, and it contains
@@ -31,7 +31,7 @@ Magic8BallDemo in the list, and in the 'Behaviors' column, select 'Show icon and
 notifications'.  Click the [OK] button to save your changes and that's it!
 Magic8BallDemo is now visible on the taskbar.
 
-Configuration Options
+<ins>Configuration Options</ins>  
 Once you have Magic8BallDemo appearing on the taskbar, simply right-click the icon to
 display a small menu of options.  The most prominent one is 'Ask a question!', and
 selecting it will generate a random answer from the list of classic answers.  You can
@@ -60,7 +60,7 @@ The 'About Magic 8-Ball Demo' selection will display a small dialog box with mor
 information about this application, and finally, the 'Exit' option will remove the
 icon from the taskbar and close the application.
 
-Credits
+<ins>Credits</ins>  
 Thank you for downloading Magic8BallDemo!
 
 Visit www.ParagonBitFoundry.com for more extraordinary software!
